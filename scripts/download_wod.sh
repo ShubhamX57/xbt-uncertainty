@@ -3,6 +3,8 @@
 # Usage: sh scripts/download_wod.sh 1990 1999
 # Run from the project root. Files that are already present are skipped,
 # and an interrupted download resumes when the script is run again.
+# If data/checksums.txt exists the files are checked against it; otherwise
+# it is written.
 
 set -eu
 
@@ -26,6 +28,10 @@ while [ "$year" -le "$last_year" ]; do
 done
 
 cd data/raw
-shasum -a 256 wod_xbt_*.nc > ../checksums.txt
 ls -l wod_xbt_*.nc
-cat ../checksums.txt
+if [ -f ../checksums.txt ]; then
+    shasum -a 256 -c ../checksums.txt
+else
+    shasum -a 256 wod_xbt_*.nc > ../checksums.txt
+    cat ../checksums.txt
+fi

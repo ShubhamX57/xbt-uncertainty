@@ -72,3 +72,27 @@ class YearMajority:
 
     def predict(self, X):
         return X["year"].map(self.by_year_).fillna(self.overall_).to_numpy()
+
+
+class YearFrequency:
+    """Class frequencies among the training casts of the same year, as probabilities.
+
+    The probabilistic version of YearMajority, used as the reference forecast
+    when scoring the tree probabilities.
+    """
+
+    def fit(self, X, y):
+        frame = pd.DataFrame({"year": X["year"].to_numpy(), "y": np.asarray(y)})
+        self.classes_ = np.array(sorted(frame["y"].unique()))
+        counts = pd.crosstab(frame["year"], frame["y"]).reindex(columns=self.classes_, fill_value=0)
+        self.by_year_ = counts.div(counts.sum(axis=1), axis=0)
+        overall = frame["y"].value_counts(normalize=True)
+        self.overall_ = overall.reindex(self.classes_, fill_value=0).to_numpy()
+        return self
+
+    def predict_proba(self, X):
+        out = np.tile(self.overall_, (len(X), 1))
+        years = X["year"].to_numpy()
+        seen = np.isin(years, self.by_year_.index)
+        out[seen] = self.by_year_.loc[years[seen]].to_numpy()
+        return out

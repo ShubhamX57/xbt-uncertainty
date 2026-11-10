@@ -194,9 +194,9 @@ def main():
     ax.set_xlabel("temperature spread across draws (degrees C)")
     ax.set_ylabel("depth (m)")
     ax.set_ylim(800, 0)
-    ax.legend(frameon=False, loc="lower right")
-    fig.tight_layout()
-    fig.savefig(FIGURES / "profile_spread.png", dpi=150)
+    # Below the axes, so it cannot cover the curves.
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.12))
+    fig.savefig(FIGURES / "profile_spread.png", dpi=150, bbox_inches="tight")
 
     cast_id = min(examples, key=lambda k: abs(examples[k][2] - 0.5))
     z, temperature, p_cast, samples = examples[cast_id]
@@ -208,9 +208,8 @@ def main():
     ax.set_xlabel("temperature (degrees C)")
     ax.set_ylabel("depth (m)")
     ax.set_title(f"Cast {cast_id}, P(Hanawa group) = {p_cast:.2f}")
-    ax.legend(frameon=False, loc="lower right")
-    fig.tight_layout()
-    fig.savefig(FIGURES / "example_cast.png", dpi=150)
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.12))
+    fig.savefig(FIGURES / "example_cast.png", dpi=150, bbox_inches="tight")
 
     out = {
         "years": [min(YEARS), max(YEARS)],

@@ -1,0 +1,171 @@
+{
+  "min_cruises": 50,
+  "merged_models": [
+    "XBT-1",
+    "XBT-10",
+    "XBT-20",
+    "XBT-3",
+    "XBT-4",
+    "XBT-5",
+    "XBT-6"
+  ],
+  "seed": 0,
+  "max_depth": 15,
+  "n_train": 243694,
+  "n_test": 60933,
+  "macro_f1": {
+    "tree_by_cruise": 0.6445966832012884,
+    "baseline_by_cruise": 0.16042434184187412,
+    "tree_random_split": 0.8300819041239398
+  },
+  "tree": {
+    "T7": {
+      "precision": 0.85956,
+      "recall": 0.8532121019614072,
+      "f1-score": 0.8563742876499422,
+      "support": 25186.0
+    },
+    "DEEP BLUE": {
+      "precision": 0.8563231850117096,
+      "recall": 0.8680118694362018,
+      "f1-score": 0.8621279104037725,
+      "support": 16850.0
+    },
+    "T4": {
+      "precision": 0.9050162757699691,
+      "recall": 0.8997593560700357,
+      "f1-score": 0.9023801597869507,
+      "support": 12051.0
+    },
+    "T6": {
+      "precision": 0.8118773946360153,
+      "recall": 0.7506199078993978,
+      "f1-score": 0.7800478556966685,
+      "support": 2823.0
+    },
+    "T5": {
+      "precision": 0.5729961832061069,
+      "recall": 0.752035065748278,
+      "f1-score": 0.6504197129704847,
+      "support": 1597.0
+    },
+    "T10": {
+      "precision": 0.785831960461285,
+      "recall": 0.7607655502392344,
+      "f1-score": 0.773095623987034,
+      "support": 1254.0
+    },
+    "XBT-7": {
+      "precision": 0.4368131868131868,
+      "recall": 0.28342245989304815,
+      "f1-score": 0.34378378378378377,
+      "support": 561.0
+    },
+    "FAST DEEP": {
+      "precision": 0.7493606138107417,
+      "recall": 0.7270471464019851,
+      "f1-score": 0.7380352644836272,
+      "support": 403.0
+    },
+    "OTHER": {
+      "precision": 0.34394904458598724,
+      "recall": 0.34838709677419355,
+      "f1-score": 0.34615384615384615,
+      "support": 155.0
+    },
+    "T11": {
+      "precision": 0.225,
+      "recall": 0.16981132075471697,
+      "f1-score": 0.1935483870967742,
+      "support": 53.0
+    },
+    "accuracy": 0.849244251883216,
+    "macro avg": {
+      "precision": 0.6546727844295002,
+      "recall": 0.6413071875178499,
+      "f1-score": 0.6445966832012883,
+      "support": 60933.0
+    },
+    "weighted avg": {
+      "precision": 0.8499334459469585,
+      "recall": 0.849244251883216,
+      "f1-score": 0.849039789938661,
+      "support": 60933.0
+    }
+  },
+  "baseline": {
+    "T7": {
+      "precision": 0.5274800812373067,
+      "recall": 0.6702930199317081,
+      "f1-score": 0.5903726110751691,
+      "support": 25186.0
+    },
+    "DEEP BLUE": {
+      "precision": 0.5125488008923592,
+      "recall": 0.6544807121661721,
+      "f1-score": 0.5748840118855236,
+      "support": 16850.0
+    },
+    "T4": {
+      "precision": 0.5763626551538047,
+      "recall": 0.35449340303709237,
+      "f1-score": 0.4389867954580486,
+      "support": 12051.0
+    },
+    "T6": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2823.0
+    },
+    "T5": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1597.0
+    },
+    "T10": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1254.0
+    },
+    "XBT-7": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 561.0
+    },
+    "FAST DEEP": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 403.0
+    },
+    "OTHER": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 155.0
+    },
+    "T11": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 53.0
+    },
+    "accuracy": 0.5281538739271002,
+    "macro avg": {
+      "precision": 0.16163915372834708,
+      "recall": 0.16792671351349725,
+      "f1-score": 0.16042434184187412,
+      "support": 60933.0
+    },
+    "weighted avg": {
+      "precision": 0.47375489436491813,
+      "recall": 0.5281538739271002,
+      "f1-score": 0.4898191465195415,
+      "support": 60933.0
+    }
+  }
+}
